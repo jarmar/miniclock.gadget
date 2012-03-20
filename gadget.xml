@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<gadget>
+    <name>miniclock</name>
+    <version>0.0.0.1</version>
+    <author name="Jakob Jarmar">
+    </author>
+    <description>Itsy bitsy digital clock.</description>
+    <icons>
+        <icon src="images/icon.png"
+            height="21"
+            width="70"/>
+    </icons>
+    <hosts>
+        <host
+            name="sidebar">
+            <base
+                type="HTML"
+                apiVersion="1.0.0"
+                src="Clock.html"/>
+            <permissions>Full</permissions>
+            <platform
+                minPlatformVersion="1.0"/>
+            <defaultImage
+                src="images/icon.png"/>
+        </host>
+    </hosts>
+</gadget>

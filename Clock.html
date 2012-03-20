@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=Unicode"/>
+        <style type="text/css">
+            body {
+                margin: 0;
+                width: 70px;
+                height: 21px;
+                font-family: segoe ui;
+                font-size: 16px;
+                color: white;
+                background: url(images/background.png);
+            }
+            #gadgetContent {
+                margin-top: 2px;
+                width: 70px;
+                text-align: center;
+                vertical-align: middle;
+                overflow: hidden;
+            }
+        </style>
+        <script type="text/jscript">
+            d = new Date();
+            function init() {
+                updateClock();
+            }
+            function updateClock() {
+                d = new Date();
+                var h = d.getHours();
+                var m = d.getMinutes();
+                var time = (h < 10 ? "0" : "") + h + ":" +
+                    (m < 10 ? "0" : "" ) + m;
+                document.getElementById("gadgetContent").innerText = time;
+                setTimeout(updateClock, millisLeft());
+            }
+            function millisLeft() {
+                var d = new Date();
+                return ((60 - d.getSeconds()) * 1000) - d.getMilliseconds();
+            }
+        </script>
+    </head>
+
+    <body onload="init()">
+        <div id="gadgetContent">00:00</div>
+    </body>
+</html>
